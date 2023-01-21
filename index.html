@@ -4,21 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/style.css">
     <title>Ingredients Calculator</title>
 </head>
 <body>
+    <h1 class="page__heading">Ingredients calculator</h1>
     <main>
         <section class="input-sc__container">
-            <input type="text" required placeholder="Ingredient">
-            <input type="text" required placeholder="quantity">
-            <select name="unit-selector" id="unity-tipe">
-                <option value="kilograms">kg - kilograms</option>
-                <option value="grams">g - grams</option>
-                <option value="liters">l - liters</option>
-                <option value="mililiters">ml - mililiters</option>
-                <option value="unit">unit</option>
-            </select>
+            <div class="inputs--container">
+                <input type="text" required placeholder="--Ingredient--" class="input input__ingredient">
+                <input type="text" required placeholder="--Quantity--" class="input input__quantity">
+                <select required name="unit-selector" id="unit-type" class="input">
+                    <option value="kg" name="kilograms">kg - kilograms</option>
+                    <option value="g" name="grams">g - grams</option>
+                    <option value="l" name="liters">l - liters</option>
+                    <option value="ml" name="mililiters">ml - mililiters</option>
+                    <option value="unit(s)" name="unit">unit(s)</option>
+                </select>
+            </div>
+            <input type="submit" value="Add" class="input__submit">
+            <div class="ingredients__list">
+                <ul class="result__list">
+                    <li class="result__item">Milk 1600ml</li>
+                    <li class="result__item">Chocolate 600g</li>
+                </ul>
+            </div>
+        </section>
+        <div class="middle-sc">
+            <input type="text" placeholder="--fator--">
+            <button>Calculate</button>
+        </div>
+        <section class="result-sc__container">
+            <ul class="result__list">
+                <li class="result__item">Milk 800ml</li>
+                <li class="result__item">Chocolate 300g</li>
+            </ul>
         </section>
     </main>
+    <footer></footer>
 </body>
 </html>
