@@ -22,5 +22,12 @@
     .result-section {
         grid-template-areas: 2 / 3 / 2 / 3;
         width: -webkit-fill-available;
+
+        .results {
+            &__item {
+                flex-direction: row;
+                line-break: normal;
+            }
+        }
     }
 }

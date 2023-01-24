@@ -29,3 +29,34 @@
         @include list-style($white, $sage);
     }
 }
+
+@media screen and (max-width: 900px) {
+    .input-section {
+        display: grid;
+        
+        .inputs--container {
+            display: grid;
+            grid-template-columns: auto auto;
+
+            .input__name {
+                grid-area: 1 / 1 / 2 / 3;
+            }
+
+            .input__quantity {
+                grid-area: 2 / 1 / 3 / 2;
+                max-width: auto;
+            }
+
+            .inputs__select {
+                grid-area: 2 / 2 / 2 / 3;
+                max-width: auto;
+            }
+        }
+
+            .ingredients {
+                &__item {
+                    line-break: normal;
+                }
+        }
+    }
+}

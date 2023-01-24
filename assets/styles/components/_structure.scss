@@ -40,3 +40,15 @@ body {
     }
 }
 
+@media screen and (max-width: 900px) {
+    body {
+        background: $light-orange;
+        main {
+            grid-template: none;
+            .page__heading{
+                line-break: normal;
+                grid-area: 1 / 1 / 1 / 1;
+            }
+        }
+    }
+}

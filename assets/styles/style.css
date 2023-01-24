@@ -36,6 +36,18 @@ body main .page__heading {
     grid-area: 1/1/1/3;
   }
 }
+@media screen and (max-width: 900px) {
+  body {
+    background: #FFB26B;
+  }
+  body main {
+    grid-template: none;
+  }
+  body main .page__heading {
+    line-break: normal;
+    grid-area: 1/1/1/1;
+  }
+}
 /* credits https: //codepen.io/dsenneff/pen/ZoLVZW*/
 .input-section {
   display: flex;
@@ -126,6 +138,29 @@ body main .page__heading {
   color: #DC3535;
 }
 
+@media screen and (max-width: 900px) {
+  .input-section {
+    display: grid;
+  }
+  .input-section .inputs--container {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .input-section .inputs--container .input__name {
+    grid-area: 1/1/2/3;
+  }
+  .input-section .inputs--container .input__quantity {
+    grid-area: 2/1/3/2;
+    max-width: auto;
+  }
+  .input-section .inputs--container .inputs__select {
+    grid-area: 2/2/2/3;
+    max-width: auto;
+  }
+  .input-section .ingredients__item {
+    line-break: normal;
+  }
+}
 /* credits https: //codepen.io/dsenneff/pen/ZoLVZW*/
 .calc-section {
   display: flex;
@@ -249,6 +284,32 @@ body main .page__heading {
     border-radius: 0 1rem 1rem 0;
   }
 }
+@media screen and (max-width: 900px) {
+  .calc-section {
+    grid-area: 3/1/3/1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .calc-section .radio--container {
+    flex-flow: column nowrap;
+    grid-area: 1/1;
+  }
+  .calc-section .radio--container input + label:first-of-type {
+    border-radius: 1rem 1rem 0 0;
+  }
+  .calc-section .radio--container input + label:last-of-type {
+    border-radius: 0 0 1rem 1rem;
+  }
+  .calc-section .factor--container {
+    grid-area: 1/2/1/2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .calc-section button {
+    grid-area: 2/1/2/3;
+  }
+}
 /* credits https: //codepen.io/dsenneff/pen/ZoLVZW*/
 .result-section {
   display: flex;
@@ -309,5 +370,9 @@ body main .page__heading {
   .result-section {
     grid-template-areas: 2/3/2/3;
     width: -webkit-fill-available;
+  }
+  .result-section .results__item {
+    flex-direction: row;
+    line-break: normal;
   }
 }/*# sourceMappingURL=style.css.map */
