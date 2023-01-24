@@ -1,0 +1,133 @@
+// colors
+$orange: #FF7B54;
+$light-orange: #FFB26B;
+$yellow: #FFD56F;
+$sage: #939B62;
+$black: #111111;
+$white: #FEFEFE;
+$red: #DC3535;
+
+// fonts
+$heading: 'Staatliches', cursive;
+$text: 'Comfortaa', cursive;
+
+// functions
+
+// buttons
+@mixin button-style ($fontfamily, $bgcolor, $bghover, $outlinehover, $bgactive, $outlineactive) {
+    transition: 0.05s;
+    padding: 1rem 2rem;
+    font-family: $fontfamily;
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 1rem;
+    background-color: $bgcolor;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $bghover;
+        outline: 3px solid $outlinehover;
+        font-weight: 700;
+    }
+
+    &:active {
+        cursor: pointer;
+        background-color: $bgactive;
+        outline: 3px solid $outlineactive;
+        font-weight: 700;
+    }
+}
+
+// input
+@mixin input-style($font, $outline) {
+    transition: 0.03s;
+    padding: 1rem;
+    font-family: $font;
+    border: none;
+    border-radius: 1rem;
+
+    &:hover,
+    &:focus-within {
+        outline: 3px solid $outline;
+    }
+}
+
+
+// lists
+@mixin list-style ($bg, $itemcolor) {
+    transition: 0.05s;
+    width: -webkit-fill-available;
+    padding: 1rem;
+    background-color: $bg;
+    border-radius: 1rem;
+
+    &__list {
+        font-size: 1.2rem;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        color: $itemcolor;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        .exclude-button {
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 1rem;
+            color: $red;
+            &:hover {
+                background-color: $red;
+                color: $white;
+                cursor: pointer;
+            }
+
+            &:hover+p {
+                color: $red;
+            }
+        }
+    }
+}
+
+
+// radio buttons
+/* credits https: //codepen.io/dsenneff/pen/ZoLVZW*/
+
+@mixin focusOutline {
+    outline: dotted 1px #CCC;
+    outline-offset: .45rem;
+}
+
+@mixin hideInput {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -9999px;
+}
+
+@mixin breakpoint($point) {
+    @if $point ==1100 {
+        @media (max-width: 1100px) {
+            @content ;
+        }
+    }
+
+    @else if $point ==800 {
+        @media (max-width: 800px) {
+            @content ;
+        }
+    }
+}

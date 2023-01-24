@@ -1,17 +1,6 @@
-@import './variables';
-
-body {
-    background-image: url(../images/background.jpg);
-    background-size: cover;
-    min-height: 100vh;
-    display: grid;
-    place-content: center;
-    main {
-        background-color: $yellow;
-        opacity: 0.8;
-        max-height: 75vh;
-        max-width: 60vw;
-        display: grid;
-            
-    }
-}
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&family=Staatliches&display=swap');
+@import './components/variables';
+@import './components/structure';
+@import './components/inputs-section';
+@import './components/calc-section';
+@import './components/results-section'

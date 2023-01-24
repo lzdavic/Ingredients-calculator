@@ -1,0 +1,31 @@
+@import './variables';
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .inputs--container {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        border-radius: 1rem;
+
+        .input {
+            @include input-style($text, $orange);
+
+            &__quantity {
+                max-width: 5em
+            }
+        }
+    }
+    
+    .button {
+        @include button-style($text, $light-orange, $orange, $black, $sage, $white);
+    }
+
+    .ingredients {
+        @include list-style($white, $sage);
+    }
+}

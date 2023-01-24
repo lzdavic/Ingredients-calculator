@@ -11,35 +11,59 @@
 <body>
     <main>
         <h1 class="page__heading">Ingredients calculator</h1>
-        <section class="input-sc__container">
+        <section class="input-section">
             <div class="inputs--container">
-                <input type="text" required placeholder="--Ingredient--" class="input input__ingredient">
-                <input type="text" required placeholder="--Quantity--" class="input input__quantity">
-                <select required name="unit-selector" id="unit-type" class="input">
-                    <option value="kg" name="kilograms">kg - kilograms</option>
-                    <option value="g" name="grams">g - grams</option>
-                    <option value="l" name="liters">l - liters</option>
-                    <option value="ml" name="mililiters">ml - mililiters</option>
-                    <option value="unit(s)" name="unit">unit(s)</option>
-                </select>
+                <input type="text" required placeholder="Ingredient" class="input">
+                <input type="text" required placeholder="Quantity" class="input input__quantity">
+                <div class="custom_select">
+                    <select required name="unit-selector" id="unit-type" class="input">
+                        <option value="kg" name="kilograms">kg - kilograms</option>
+                        <option value="g" name="grams">g - grams</option>
+                        <option value="l" name="liters">l - liters</option>
+                        <option value="ml" name="mililiters">ml - mililiters</option>
+                        <option value="unit(s)" name="unit">unit(s)</option>
+                    </select>
+                </div>
             </div>
-            <input type="submit" value="Add" class="input__submit">
-            <div class="ingredients__list">
-                <ul class="result__list">
-                    <li class="result__item">Milk 1600ml</li>
-                    <li class="result__item">Chocolate 600g</li>
+            <input type="submit" value="Add" class="button">
+            <div class="ingredients">
+                <ul class="ingredients__list">
+                    <li class="ingredients__item">
+                        <button id="exclude" class="exclude-button">X</button>
+                        <p>Milk 1600ml</p>
+                    </li>
+                    <li class="ingredients__item">
+                        <button id="exclude" class="exclude-button">X</button>
+                        <p>Chocolate 600g</p>
+                    </li>
                 </ul>
             </div>
         </section>
-        <div class="middle-sc">
-            <input type="text" placeholder="--fator--">
+        <section class="calc-section">
+            <div class="radio--container">
+                <input type="radio" id="multiply" name="operatiuon" value="*" class="input-radio">
+                <label for="multiply">Multiply</label>
+                <input type="radio" id="divide" name="operatiuon" value="/" class="input-radio" checked>
+                <label for="divide">Divide</label>
+            </div>
+            <div class="factor--container">
+                <label for="factor">factor</label>
+                <input type="number" id="factor" name="factor" class="input input__factor">
+            </div>
             <button>Calculate</button>
-        </div>
-        <section class="result-sc__container">
-            <ul class="result__list">
-                <li class="result__item">Milk 800ml</li>
-                <li class="result__item">Chocolate 300g</li>
-            </ul>
+        </section>
+        <section class="result-section">
+            <h2 class="results__heading">Results</h2>
+            <div class="results">
+                <ul class="results__list">
+                    <li class="results__item">
+                        Milk 800ml
+                    </li>
+                    <li class="results__item">
+                        Chocolate 300g
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
     <footer></footer>
