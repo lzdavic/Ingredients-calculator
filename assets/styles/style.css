@@ -264,12 +264,18 @@ body main .page__heading {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  .calc-section .radio--container {
+    grid-area: 1/1/2/3;
+    width: -webkit-fill-available;
+  }
   .calc-section .factor--container {
-    grid-area: 1/2/1/2;
-    align-items: center;
+    grid-area: 2/1/3/2;
+    width: -webkit-fill-available;
   }
   .calc-section button {
-    grid-area: 2/1/2/3;
+    grid-area: 2/2/3/3;
+    width: -webkit-fill-available;
+    font-size: calc(1rem - 1px);
   }
 }
 /* credits https: //codepen.io/dsenneff/pen/ZoLVZW*/
