@@ -17,3 +17,10 @@
         @include list-style($white, $black)
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .result-section {
+        grid-template-areas: 2 / 3 / 2 / 3;
+        width: -webkit-fill-available;
+    }
+}

@@ -4,6 +4,7 @@
 body {
   background-image: url(../images/background.jpg);
   background-size: cover;
+  background-position: center;
   min-height: 100vh;
   font-family: "Comfortaa", cursive;
   display: grid;
@@ -27,6 +28,14 @@ body main .page__heading {
   -webkit-text-stroke: 2px #111111;
 }
 
+@media screen and (max-width: 1200px) {
+  body main {
+    grid-template: auto 40% 40%/1fr 1fr;
+  }
+  body main .page__heading {
+    grid-area: 1/1/1/3;
+  }
+}
 /* credits https: //codepen.io/dsenneff/pen/ZoLVZW*/
 .input-section {
   display: flex;
@@ -194,6 +203,11 @@ body main .page__heading {
 .calc-section .input:hover, .calc-section .input:focus-within {
   outline: 3px solid #FF7B54;
 }
+.calc-section label[for=factor] {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
 .calc-section button {
   transition: 0.05s;
   padding: 1rem 2rem;
@@ -218,6 +232,23 @@ body main .page__heading {
   font-weight: 700;
 }
 
+@media screen and (max-width: 1200px) {
+  .calc-section {
+    flex-direction: row;
+    justify-content: center;
+    grid-area: 3/1/3/3;
+  }
+  .calc-section .radio--container {
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  .calc-section .radio--container input + label:first-of-type {
+    border-radius: 1rem 0 0 1rem;
+  }
+  .calc-section .radio--container input + label:last-of-type {
+    border-radius: 0 1rem 1rem 0;
+  }
+}
 /* credits https: //codepen.io/dsenneff/pen/ZoLVZW*/
 .result-section {
   display: flex;
@@ -272,4 +303,11 @@ body main .page__heading {
 }
 .result-section .results__item .exclude-button:hover + p {
   color: #DC3535;
+}
+
+@media screen and (max-width: 1200px) {
+  .result-section {
+    grid-template-areas: 2/3/2/3;
+    width: -webkit-fill-available;
+  }
 }/*# sourceMappingURL=style.css.map */
