@@ -2,7 +2,7 @@
 $orange: #FF7B54;
 $light-orange: #FFB26B;
 $yellow: #FFD56F;
-$sage: #939B62;
+$sage: #803E2A;
 $black: #111111;
 $white: #FEFEFE;
 $red: #DC3535;
@@ -37,6 +37,7 @@ $text: 'Comfortaa', cursive;
         background-color: $bgactive;
         outline: 3px solid $outlineactive;
         font-weight: 700;
+        color: $white;
     }
 }
 
@@ -77,10 +78,7 @@ $text: 'Comfortaa', cursive;
         justify-content: space-between;
         align-items: center;
         color: $itemcolor;
-
-        &:hover {
-            opacity: 0.7;
-        }
+        padding: 0 0.5rem;
 
         .exclude-button {
             padding: 0.5rem 1rem;

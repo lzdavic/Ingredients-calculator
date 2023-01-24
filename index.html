@@ -16,7 +16,7 @@
                 <input type="text" required placeholder="Ingredient" class="input input__name">
                 <input type="text" required placeholder="Quantity" class="input input__quantity">
                 <div class="inputs__select">
-                    <select required name="unit-selector" id="unit-type" class="input">
+                    <select required name="unit-selector" id="unit-type" class="input input__select">
                         <option value="kg" name="kilograms">kg - kilograms</option>
                         <option value="g" name="grams">g - grams</option>
                         <option value="l" name="liters">l - liters</option>
@@ -26,15 +26,30 @@
                 </div>
             </div>
             <input type="submit" value="Add" class="button">
+        </section>
+        <section class="ingredient-section">
+            <h2 class="ingredients__heading">Ingredients</h2>
             <div class="ingredients">
                 <ul class="ingredients__list">
                     <li class="ingredients__item">
                         <button id="exclude" class="exclude-button">X</button>
-                        <p>Milk 1600ml</p>
+                        <p>Milk 1,6l</p>
                     </li>
                     <li class="ingredients__item">
                         <button id="exclude" class="exclude-button">X</button>
                         <p>Chocolate 600g</p>
+                    </li>
+                    <li class="ingredients__item">
+                        <button id="exclude" class="exclude-button">X</button>
+                        <p>Flour 700g</p>
+                    </li>
+                    <li class="ingredients__item">
+                        <button id="exclude" class="exclude-button">X</button>
+                        <p>Baking Powder 60g</p>
+                    </li>
+                    <li class="ingredients__item">
+                        <button id="exclude" class="exclude-button">X</button>
+                        <p>Butter 180g</p>
                     </li>
                 </ul>
             </div>
@@ -43,12 +58,12 @@
             <div class="radio--container">
                 <input type="radio" id="multiply" name="operatiuon" value="*" class="input-radio">
                 <label for="multiply">Multiply</label>
-                <input type="radio" id="divide" name="operatiuon" value="/" class="input-radio" checked>
+                <input type="radio" id="divide" name="operatiuon" value="/" class="input-radio">
                 <label for="divide">Divide</label>
             </div>
             <div class="factor--container">
-                <label for="factor">factor</label>
-                <input type="number" id="factor" name="factor" class="input input__factor">
+                <!-- <label for="factor">factor</label> -->
+                <input type="number" id="factor" name="factor" class="input input__factor" placeholder="Factor">
             </div>
             <button>Calculate</button>
         </section>
@@ -57,10 +72,24 @@
             <div class="results">
                 <ul class="results__list">
                     <li class="results__item">
-                        Milk 800ml
+                        <input type="checkbox">
+                        <p>Milk 800ml</p>
                     </li>
                     <li class="results__item">
-                        Chocolate 300g
+                        <input type="checkbox">
+                        <p>Chocolate 300g</p>
+                    </li>
+                    <li class="results__item">
+                        <input type="checkbox">
+                        <p>Flour 350g</p>
+                    </li>
+                    <li class="results__item">
+                        <input type="checkbox">
+                        <p>Baking Powder 30g</p>
+                    </li>
+                    <li class="results__item">
+                        <input type="checkbox">
+                        <p>Butter 90g</p>
                     </li>
                 </ul>
             </div>
