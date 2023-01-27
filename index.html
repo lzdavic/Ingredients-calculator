@@ -11,12 +11,12 @@
 <body>
     <main>
         <h1 class="page__heading">Ingredients calculator</h1>
-        <section class="input-section">
+        <form class="input-section" id="form">
             <div class="inputs--container">
-                <input type="text" required placeholder="Ingredient" class="input input__name">
-                <input type="text" required placeholder="Quantity" class="input input__quantity">
+                <input type="text" required placeholder="Ingredient" class="input input__name" id="ingredient-name">
+                <input type="text" required placeholder="Quantity" class="input input__quantity" id="ingredient-quantity">
                 <div class="inputs__select">
-                    <select required name="unit-selector" id="unit-type" class="input input__select">
+                    <select required name="unit-selector" id="quantity-type" class="input input__select">
                         <option value="kg" name="kilograms">kg - kilograms</option>
                         <option value="g" name="grams">g - grams</option>
                         <option value="l" name="liters">l - liters</option>
@@ -25,8 +25,8 @@
                     </select>
                 </div>
             </div>
-            <input type="submit" value="Add" class="button">
-        </section>
+            <input type="submit" value="Add" class="button" id="button-add">
+        </form>
         <section class="ingredient-section">
             <h2 class="ingredients__heading">Ingredients</h2>
             <div class="ingredients">
@@ -96,6 +96,6 @@
         </section>
     </main>
     <footer></footer>
-    <script src="./assets/scripts/main.js" type="module"></script>
+    <script src="./assets/scripts/app.js"></script>
 </body>
 </html>
