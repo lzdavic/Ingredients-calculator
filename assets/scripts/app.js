@@ -1,16 +1,23 @@
 const form = document.getElementById('#form');
+const ingredientList = document.getElementById
 
+if (form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
+        const ingredientName = form.getElementById('#ingredient-name').value;
+        const ingredientQuantity = form.getElementById('#ingredient-quantity').value;
+        const ingredientUnity = form.getElementById('#quantity-type').value;
 
-    const ingredientName = e.target.elements('#ingredient-name');
-    const ingredientQuantity = e.target.elements('#ingredient-quantity');
-    const ingredientUnity = e.target.elements('#quantity-type');
-    const ingredientItem = {
-        'name': ingredientName.value,
-        'quantity': ingredientQuantity.value,
-        'unity': ingredientUnity.vale
-    }
-    console.log(ingredientItem)
-});
+        createIngredient(ingredientName, ingredientQuantity, ingredientUnity);
+    });
+}
+
+function createIngredient(name, quantity, unity) {
+    var ingredientItem = `<li class="ingredients__item">
+                        <button id="exclude" class="exclude-button">X</button>
+                        <p>${name} ${quantity}${unity}</p>
+                        </li>`
+
+    ingredientList.appendChild = ingredientItem
+}   
