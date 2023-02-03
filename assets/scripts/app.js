@@ -16,7 +16,7 @@ form.addEventListener("submit", (event) => {
     newLi.classList.add("ingredients__item");
     newLi.innerHTML = `
         <button id="exclude" class="exclude-button">X</button>
-        <p><span id=item-name>${name}</span> - <span id="item-quantity">${quantity}</span> <span id="item-unity">${unity}</span></p>`;
+        <p class="item"><span class=item-name>${name}</span> - <span class="item-quantity">${quantity}</span> <span class="item-unity">${unity}</span></p>`;
 
     const list = document.getElementById("ingredients");
     list.appendChild(newLi);
@@ -41,3 +41,46 @@ form.addEventListener("submit", (event) => {
     const add = document.getElementById("button-add");
     add.value = "ADD"
 });
+
+
+
+const btnCalculate = document.getElementById("calculate");
+
+btnCalculate.addEventListener('click', () => {
+    // find the selected radio button value
+    const operation = document.querySelector('input[name="operation"]:checked').value;
+    const factor = document.getElementById("factor").value;
+
+    calculate(operation, factor);
+})
+
+function calculate(operation, factor) {
+    var ingredientItens = document.querySelectorAll(".ingredients__item")
+    const resultsList = document.getElementById("results");
+
+    resultsList.innerHTML = ""
+
+    ingredientItens.forEach(element => {
+        let name = element.querySelector(".item-name").textContent;
+        let quantity = element.querySelector(".item-quantity").textContent;
+        let unity = element.querySelector(".item-unity").textContent;
+        
+
+
+        if (operation == "/") {
+            quantity = quantity / factor;
+        }
+
+        if (operation == "*") {
+            quantity = quantity * factor;
+        }
+
+        const newLi = document.createElement("li");
+        newLi.classList.add("results__item");
+        newLi.innerHTML = `
+        <input type="checkbox">
+        <p class="item"><span class=item-name>${name}</span> - <span class="item-quantity">${quantity}</span> <span class="item-unity">${unity}</span></p>`;
+
+        resultsList.appendChild(newLi);
+    });
+}
