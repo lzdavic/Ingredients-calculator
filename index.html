@@ -16,7 +16,7 @@
                 <input type="text" required placeholder="Ingredient" class="input input__name" id="ingredient-name">
                 <input type="text" required placeholder="Quantity" class="input input__quantity" id="ingredient-quantity">
                 <div class="inputs__select">
-                    <select required name="unit-selector" id="quantity-type" class="input input__select">
+                    <select required name="unit-selector" id="ingredient-unity" class="input input__select">
                         <option value="kg" name="kilograms">kg - kilograms</option>
                         <option value="g" name="grams">g - grams</option>
                         <option value="l" name="liters">l - liters</option>
@@ -30,9 +30,9 @@
         <section class="ingredient-section">
             <h2 class="ingredients__heading">Ingredients</h2>
             <div class="ingredients">
-                <ul class="ingredients__list" id="Ingredients">
+                <ul class="ingredients__list" id="ingredients">
                     <li class="ingredients__item">
-                        <button id="exclude" class="exclude-button">X</button>
+                        <button id="exclude" value="ADD" class="exclude-button">X</button>
                         <p>Milk 1,6l</p>
                     </li>
                     <li class="ingredients__item">
