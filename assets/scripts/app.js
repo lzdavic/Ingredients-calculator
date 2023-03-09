@@ -21,7 +21,7 @@ form.addEventListener("submit", (event) => {
     const list = document.getElementById("ingredients");
     list.appendChild(newLi);
 
-    
+
 
     // exclude each item
     const excludeButtons = document.querySelectorAll(".exclude-button");
@@ -64,8 +64,9 @@ function calculate(operation, factor) {
         let name = element.querySelector(".item-name").textContent;
         let quantity = element.querySelector(".item-quantity").textContent;
         let unity = element.querySelector(".item-unity").textContent;
+        let roundTo = 1
         
-
+        console.log(unity)
 
         if (operation == "/") {
             quantity = quantity / factor;
@@ -74,12 +75,34 @@ function calculate(operation, factor) {
         if (operation == "*") {
             quantity = quantity * factor;
         }
+        // converts kg to mg when less tan 1kg and mg to kg when more tan 1000mg
+        if (quantity >= 1000 && unity === 'mg') {
+            quantity = quantity / 1000;
+            unity = 'kg'
+            roundTo = 2
+
+        } else if (quantity < 1 && unity === 'kg') {
+            quantity = quantity * 1000;
+            unity = 'mg'
+            roundTo = 0
+        }
+
+        if (quantity >= 1000 && unity === 'ml') {
+            quantity = quantity / 1000;
+            unity = 'l'
+            roundTo = 2
+        } else if (quantity < 1 && unity === 'l') {
+            quantity = quantity * 1000;
+            unity = 'ml'
+            roundTo = 0
+
+        }
 
         const newLi = document.createElement("li");
         newLi.classList.add("results__item");
         newLi.innerHTML = `
         <input type="checkbox">
-        <p class="item"><span class=item-name>${name}</span> - <span class="item-quantity">${quantity}</span> <span class="item-unity">${unity}</span></p>`;
+        <p class="item"><span class=item-name>${name}</span> - <span class="item-quantity">${quantity.toFixed(roundTo)}</span> <span class="item-unity">${unity}</span></p>`;
 
         resultsList.appendChild(newLi);
     });
